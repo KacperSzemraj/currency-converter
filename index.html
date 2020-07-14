@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <h1 class="header__title">Kalkulator walutowy</h1>
+    </header>
+    <main class="main">
+        <div class="container">
+            <form class="js-form">
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Uzupełnij dane</legend>
+                    <p>
+                        <label>
+                            <span class="form__labelText">Kwota w zł*:</span>
+                            <input placeholder="Podaj kwotę w zł" class="form__field js-amount" type="number" required
+                                step="0.01">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <span class="form__labelText">
+                                Waluta:
+                            </span>
+                            <select class="form__field js-currency">
+                                <option value="USD">Dolar amerykański</option>
+                                <option value="EUR" selected>Euro</option>
+                                <option value="GBP">Funt brytyjski</option>
+                                <option value="CHF">Frank szwajcarski</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p class="form__buttonParagraph">
+                        <button class="form__button">Przelicz</button>
+                    </p>
+                </fieldset>
+            </form>
+            <p class="container__paragraphSource">Kursy walut na podstawie tabeli nr 125/A/NBP/2020 of 2020-06-30 – <a
+                    rel="noreferrer noopener" target="_blank" href="https://nbp.pl/"
+                    title="Strona internetowa NBP">NBP</a></p>
+            <p class="container__resultTextBox">
+                <span class="container__resultText js-result"></span>
+            </p>
+        </div>
+    </main>
+    <footer class="footer">
+        © 2020 Kacper Szemraj
+    </footer>
+</body>
+
+</html>

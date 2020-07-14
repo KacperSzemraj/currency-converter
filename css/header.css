@@ -1,0 +1,12 @@
+.header {
+    display: block;
+}
+
+.header__title {
+    margin: 0 auto;
+    padding: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+}

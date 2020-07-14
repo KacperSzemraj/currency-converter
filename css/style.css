@@ -1,0 +1,23 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.body {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.main {
+    display: block;
+    min-height: 100vh;
+    background-image: url(https://imgur.com/88PAbS0.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
