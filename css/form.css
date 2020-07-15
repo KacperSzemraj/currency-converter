@@ -46,10 +46,6 @@
     background-color: hsl(0, 100%, 95%);
 }
 
-.form__buttonParagraph {
-    text-align: center;
-}
-
 .form__button {
     margin: 10px auto;
     display: inline-block;
