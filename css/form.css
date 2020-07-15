@@ -48,7 +48,8 @@
 
 .form__button {
     margin: 10px auto;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     padding: 10px;
     border: 1px solid;
     border-radius: 4px;
