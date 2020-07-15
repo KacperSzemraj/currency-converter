@@ -15,7 +15,7 @@ This is a simple currency converter designed for educational purposes. It curren
 3. Click on the button "Przelicz"
 4. The converted amount will be displayed below
 
-![Converter gif](images/How to use.gif)
+![Converter](images/how-to-use.gif)
 
 ## Technologies
 
