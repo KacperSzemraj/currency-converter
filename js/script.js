@@ -1,38 +1,49 @@
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
+{
+    const calculateResult = (amount, currency) => {
+        const rateEUR = 4.4660;
+        const rateGBP = 4.8851;
+        const rateUSD = 3.9806;
+        const rateCHF = 4.1818;
 
-let rateEUR = 4.4660;
-let rateGBP = 4.8851;
-let rateUSD = 3.9806;
-let rateCHF = 4.1818;
+        switch (currency) {
+            case "EUR":
+                return amount / rateEUR;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+            case "GBP":
+                return amount / rateGBP;
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
+            case "USD":
+                return amount / rateUSD;
 
-    let result;
+            case "CHF":
+                return amount / rateCHF;
+        }
+    };
 
-    switch (currency) {
-        case "EUR":
-            result = amount / rateEUR;
-            break;
+    const updateResultText = (amount, result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerHTML = `<span class="container__inputAmount">${amount.toFixed(2)} PLN</span> to w przeliczeniu <span class="container__outputAmount">${result.toFixed(2)} ${currency}</span>`;
+    };
 
-        case "GBP":
-            result = amount / rateGBP;
-            break;
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-        case "USD":
-            result = amount / rateUSD;
-            break;
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency");
 
-        case "CHF":
-            result = amount / rateCHF;
-            break;
-    }
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
 
-    resultElement.innerHTML = `<span class="container__inputAmount">${amount.toFixed(2)} PLN</span> to w przeliczeniu <span class="container__outputAmount">${result.toFixed(2)} ${currency}</span>`;
-});
+        const result = calculateResult(amount, currency);
+
+        updateResultText(amount, result, currency);
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+    init();
+}
